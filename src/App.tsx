@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
 import ContactForm from './ContactForm';
-import myImage from "./WhatsApp Image 2025-03-04 at 21.01.22_c52536a8.jpg";
 import {
   Smartphone,
   Code,
@@ -38,6 +37,7 @@ function App() {
     education: false,
     contact: false
   });
+  const [showAllProjects, setShowAllProjects] = useState(false);
 
   const sectionsRef = useRef<Record<string, HTMLElement | null>>({
     home: null,
@@ -122,20 +122,20 @@ function App() {
   const skills = [
     { name: "Flutter", icon: <Smartphone className="h-6 w-6" />, level: 85 },
     { name: "Kotlin", icon: <Code className="h-6 w-6" />, level: 80 },
-    { name: "React Native", icon: <Layers className="h-6 w-6" />, level: 75 },
-    { name: "Firebase", icon: <Database className="h-6 w-6" />, level: 70 },
-    { name: "UI/UX Design", icon: <Monitor className="h-6 w-6" />, level: 65 },
+    { name: "Go", icon: <Layers className="h-6 w-6" />, level: 75 },
+    { name: "Angular", icon: <Database className="h-6 w-6" />, level: 70 },
+    { name: "Springboot", icon: <Monitor className="h-6 w-6" />, level: 65 },
     { name: "Java", icon: <Zap className="h-6 w-6" />, level: 85 }
   ];
 
   // Projects data
-  const projects = [
+  const mainProjects = [
     {
       title: "Smart Pregnancy Belly Wrap",
       description: "A social networking app for university students to connect, share resources, and organize study groups.",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTe1EPEUL5ga9NnUjZp3BWpJ2-z5WS_KubOvA&s",
+      image: "https://i5.walmartimages.com/seo/Belly-Bands-for-Pregnant-Women-Pregnancy-Belly-Support-Band-Belt-Pregnancy-Support-Belt-For-Back-Pelvic-Hip-Pain-Belly-Band-Back-Support_3ec63184-67c9-4b1d-8a34-547b93fe2676.bb4d47769d94634bcd09e4a209b9f1da.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF",
       tags: ["Flutter", "Firebase", "React"],
-      link: "#",
+      link: "https://github.com/chalindu19/NOVALITH",
       type: "Group Project"
     },
     {
@@ -143,7 +143,7 @@ function App() {
       description: "A productivity app that helps students manage assignments, track study hours, and set goals.",
       image: "https://eventfinca-mallorca.com/wp-content/uploads/2023/10/Discover-the-Ultimate-Dice-Game-App-for-Endless-Entertainment.jpg",
       tags: ["Kotlin", "Room Database", "Productivity"],
-      link: "#",
+      link: "https://github.com/NadilGT/Mobile_CW_02",
       type: "Personal Project"
     },
     {
@@ -151,10 +151,39 @@ function App() {
       description: "An app that scans product barcodes to provide sustainability information and eco-friendly alternatives.",
       image: "https://www.appstudio.ca/blog/wp-content/uploads/2022/04/Pro-Suggestions-for-the-Best-Expense-Tracker-Apps-for-Startups-in-2022.jpg",
       tags: ["Flutter", "UI/UX", "Sustainability"],
-      link: "#",
+      link: "https://github.com/NadilGT/Expenz",
       type: "Personal Project"
     }
   ];
+
+  const moreProjects = [
+    {
+      title: "Spotify-Clone",
+      description: "Built a cross-platform music streaming app with user authentication, real-time database, cloud storage,and playlist management using Flutter and Firebase.",
+      image: "https://img.youtube.com/vi/x4Cm5WhW1M4/maxresdefault.jpg",
+      tags: ["Flutter", "Firebase", "Clean Architecture"],
+      link: "https://github.com/NadilGT/spotify-clone",
+      type: "Personal Project"
+    },
+    {
+      title: "Skin-firts",
+      description: " Developed a cross-platform healthcare app with clean architecture, enabling user authentication, doctor search, appointment booking, and real-time schedule management. Built scalable backend APIs in Gowith secure data handling and integrated with Flutter frontend for a seamless user experience.",
+      image: "https://images.ui8.net/uploads/shot1_1714061700628.png",
+      tags: ["Flutter", "Firebase", "Go"],
+      link: "https://github.com/NadilGT/skin-firts",
+      type: "Personal Project"
+    },
+    {
+      title: " Real-Time Ticketing System",
+      description: "Design and developed a real-time event ticketing system using Java for the backend (CLI) and Angular with Spring Boot for the GUI.",
+      image: "https://www.smartsight.in/wp-content/uploads/2020/11/helpdesk-ticketing-system-02.jpg",
+      tags: ["Angular", "Springboot", "Rest-API"],
+      link: "https://github.com/NadilGT/oop_backend_new",
+      type: "Personal Project"
+    }
+  ];
+
+  const projects = showAllProjects ? [...mainProjects, ...moreProjects] : mainProjects;
 
   // Education data
   const education = [
@@ -176,11 +205,14 @@ function App() {
 
   // Achievements data
   const achievements = [
-    "1st Place, University Hackathon 2023",
-    "Google Developer Student Club Lead",
-    "Dean's List (All semesters)",
-    "Open Source Contributor to 3 Flutter packages",
-    "Selected for Competitive Summer Internship Program"
+    {
+      title: "1st Place, Cutting Edge",
+      description: "Awarded for developing an innovative maternal health monitoring solution (Smart Pregnancy Belly Wrap – Novalith) integrating IoT sensors and mobile technology at the Cutting Edge University Hackathon."
+    },
+    {
+      title: "3rd Place, CodeSprint X",
+      description: "Awarded for developing an innovative maternal health monitoring solution (Smart Pregnancy Belly Wrap – Novalith) integrating IoT sensors and mobile technology at the Cutting Edge University Hackathon."
+    }
   ];
 
   return (
@@ -269,10 +301,10 @@ function App() {
                     Nadil Dinsara
                   </span>
                   <br />
-                  <span>SE Student & Mobile Developer</span>
+                  <span>Mobile & Backend Developer</span>
                 </h1>
                 <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-xl">
-                  Passionate about creating innovative mobile experiences. Seeking internship opportunities.
+                  Passionate about creating innovative mobile & backend experiences. Seeking internship opportunities.
                 </p>
                 <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
                   <button
@@ -361,7 +393,7 @@ function App() {
                 <div className="relative">
                   <div className="bg-gradient-to-br from-cyan-500 to-blue-500 rounded-2xl p-1">
                     <img
-                      src={myImage}
+                      src="dist\assets\profile_image.jpg"
                       alt="Nadil Dinsara"
                       className="rounded-2xl w-full h-auto"
                     />
@@ -371,7 +403,7 @@ function App() {
               </div>
               <div className="md:w-2/3">
                 <h3 className="text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-400">
-                  Software Engineering Student & Mobile Developer
+                  Software Engineering Student (Mobile & Backend Developer)
                 </h3>
                 <p className="text-gray-300 mb-6 leading-relaxed">
                   I'm a passionate Software Engineering student with a focus on mobile application development.
@@ -389,9 +421,12 @@ function App() {
                   </h4>
                   <ul className="space-y-2">
                     {achievements.map((achievement, index) => (
-                      <li key={index} className="flex items-start">
-                        <span className="text-cyan-400 mr-2">•</span>
-                        <span>{achievement}</span>
+                      <li key={index} className="flex flex-col items-start">
+                        <div className="flex items-center">
+                          <span className="text-cyan-400 mr-2">•</span>
+                          <span className="font-semibold">{achievement.title}</span>
+                        </div>
+                        <span className="text-gray-400 text-sm ml-5">{achievement.description}</span>
                       </li>
                     ))}
                   </ul>
@@ -457,7 +492,7 @@ function App() {
             <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
               {[
                 "JavaScript", "TypeScript", "Python", "Git",
-                "HTML/CSS", "SQL", "RESTful APIs", "Material Design"
+                "Docker", "MongoDB", "RESTful APIs", "CI/CD"
               ].map((tech, index) => (
                 <div
                   key={index}
@@ -533,9 +568,14 @@ function App() {
             </div>
 
             <div className="text-center mt-12">
-              <button className="px-8 py-3 border border-cyan-500 rounded-full font-medium hover:bg-cyan-500/10 transition-all duration-300">
-                View All Projects
-              </button>
+              {!showAllProjects && (
+                <button
+                  className="px-8 py-3 border border-cyan-500 rounded-full font-medium hover:bg-cyan-500/10 transition-all duration-300"
+                  onClick={() => setShowAllProjects(true)}
+                >
+                  View All Projects
+                </button>
+              )}
             </div>
           </div>
         </div>
@@ -613,7 +653,7 @@ function App() {
                 <h3 className="text-2xl font-bold">Internship Goals</h3>
               </div>
               <p className="text-gray-300 mb-6">
-                I'm actively seeking internship opportunities in mobile development to apply my skills in a professional environment,
+                I'm actively seeking internship opportunities in mobile & backend development to apply my skills in a professional environment,
                 learn industry best practices, and contribute to meaningful projects. My ideal internship would allow me to:
               </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -630,6 +670,27 @@ function App() {
                   <p className="text-gray-300 text-sm">Deepen my knowledge of mobile frameworks and learn new technologies.</p>
                 </div>
               </div>
+            </div>
+
+            {/* Work Experience */}
+            <div className="mt-20 bg-gray-800/30 backdrop-blur-sm rounded-xl p-8">
+              <div className="flex items-center mb-6">
+                <Briefcase className="h-6 w-6 text-cyan-400 mr-3" />
+                <h3 className="text-2xl font-bold">Work Experience</h3>
+              </div>
+              <div className="mb-4">
+                <div className="text-lg font-semibold text-cyan-300">Software Engineering Intern</div>
+                <div className="text-gray-300">Evolza - Colombo, Sri Lanka</div>
+                <div className="text-gray-400 text-sm mb-2">May 2025 - Present</div>
+              </div>
+              <ul className="list-disc ml-6 text-gray-300 space-y-2">
+                <li>
+                  Developed a comprehensive service management application using Kotlin Jetpack Compose, implementing multiple activities with Intents for smooth navigation and an intuitive user experience.
+                </li>
+                <li>
+                  Integrated Firebase Messaging for real-time notifications, Go backend for fast and scalable APIs, Google Maps for location-based services, and Auth0 for secure authentication.
+                </li>
+              </ul>
             </div>
           </div>
         </div>
