@@ -713,7 +713,7 @@ function App() {
               </span>
             </div>
             <div className="text-gray-400 text-sm">
-              © {new Date().getFullYear()} Nadil Dinsara. All rights reserved.
+              © {new Date().getFullYear()} Nadil Dinsara.All rights reserved.
             </div>
           </div>
         </div>
