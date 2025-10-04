@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import ContactForm from './ContactForm';
+import profileImage from './profile_image.jpg';
 import {
   Smartphone,
   Code,
@@ -393,7 +394,7 @@ function App() {
                 <div className="relative">
                   <div className="bg-gradient-to-br from-cyan-500 to-blue-500 rounded-2xl p-1">
                     <img
-                      src="dist\assets\profile_image.jpg"
+                      src={profileImage}
                       alt="Nadil Dinsara"
                       className="rounded-2xl w-full h-auto"
                     />
