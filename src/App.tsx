@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import ContactForm from './ContactForm';
-import profileImage from './profile_image.jpg';
+import profileImage from './profile_image.png';
 import {
   Smartphone,
   Code,
@@ -682,14 +682,23 @@ function App() {
               <div className="mb-4">
                 <div className="text-lg font-semibold text-cyan-300">Software Engineering Intern</div>
                 <div className="text-gray-300">Evolza - Colombo, Sri Lanka</div>
-                <div className="text-gray-400 text-sm mb-2">May 2025 - Present</div>
+                <div className="text-gray-400 text-sm mb-2">July 2025 – July 2026</div>
               </div>
               <ul className="list-disc ml-6 text-gray-300 space-y-2">
                 <li>
-                  Developed a comprehensive service management application using Kotlin Jetpack Compose, implementing multiple activities with Intents for smooth navigation and an intuitive user experience.
+                  Developed and maintained a comprehensive service management application using Kotlin, Flutter, and Angular, delivering responsive mobile and web experiences with intuitive navigation.
                 </li>
                 <li>
-                  Integrated Firebase Messaging for real-time notifications, Go backend for fast and scalable APIs, Google Maps for location-based services, and Auth0 for secure authentication.
+                  Designed and implemented scalable RESTful APIs using Go and MongoDB, ensuring efficient data management and high system performance.
+                </li>
+                <li>
+                  Integrated Firebase Cloud Messaging for real-time notifications, Google Maps for location-based services, and Auth0 for secure authentication and authorization.
+                </li>
+                <li>
+                  Deployed and managed applications on AWS infrastructure using Docker containers and Nginx as a reverse proxy, improving scalability and reliability.
+                </li>
+                <li>
+                  Configured and maintained DevOps workflows, including containerization, server deployment, environment configuration, and application monitoring.
                 </li>
               </ul>
             </div>
@@ -709,7 +718,7 @@ function App() {
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
               <div className="w-20 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 mx-auto"></div>
               <p className="text-xl text-gray-400 max-w-2xl mx-auto mt-4">
-                Interested in offering an internship opportunity or discussing a project? I'd love to hear from you!
+                Interested in discussing new opportunities, collaboration, or a project? I'd love to hear from you!
               </p>
             </div>
 
@@ -717,10 +726,10 @@ function App() {
               <div className="p-8 md:p-12">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div>
-                    <div className="space-y-4">            
+                    <div className="space-y-4">
                       <section id="contact" className="max-w-xl mx-auto px-4 py-10">
                         <h2 className="text-2xl font-semibold text-white mb-6">Contact Me</h2>
-                        <ContactForm/>
+                        <ContactForm />
                       </section>
                     </div>
                   </div>
