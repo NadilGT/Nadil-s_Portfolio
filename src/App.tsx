@@ -192,7 +192,7 @@ function App() {
       degree: "B.Eng (Hons) Software Engineering (Undergraduate)",
       university: " Informatics Institute of Technology",
       period: "2023 - Present (Expected graduation: 2027)",
-      description: "Focusing on Mobile Application Development, Software Engineering, and Human-Computer Interaction. Current GPA: 3.8/4.0",
+      description: "Focusing on Mobile Application Development, Software Engineering, and Human-Computer Interaction.",
       courses: ["Mobile App Development", "Data Structures & Algorithms", "UI/UX Design", "Database Systems"]
     },
     {
